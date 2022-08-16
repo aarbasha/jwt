@@ -53,7 +53,7 @@ class AuthController extends Controller
     public function logout()
     {
         auth()->logout();
-        return $this->SendResponse(null, 'User successfully signed out', 200);
+        return $this->SendResponse(auth()->user(), 'User successfully logout', 200);
     }
     // #########################################################################
     public function refresh()
@@ -63,6 +63,7 @@ class AuthController extends Controller
     // #########################################################################
     public function userProfile()
     {
+        // note send token with link
         return $this->SendResponse(auth()->user(), null, 200);
     }
     // #########################################################################
