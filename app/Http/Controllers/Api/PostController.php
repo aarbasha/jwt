@@ -79,7 +79,8 @@ class PostController extends Controller
         }
     }
 
-    public function destroy($id){
+    public function destroy($id)
+    {
 
         $post = Post::find($id);
         if (!$post) {
@@ -90,6 +91,5 @@ class PostController extends Controller
         if ($post) {
             return $this->SendResponse(null, "success Deleted tha post", 200);
         }
-
     }
 }

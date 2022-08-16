@@ -12,7 +12,7 @@ class UserController extends Controller
     use GlobalTraits;
 
     public function getAllUser(){
-        $users = User::all();
+        $users =  User::orderBy('id','DESC')->paginate(5);
 
         return $this->SendResponse($users , "success all tha users" , 200);
     }
